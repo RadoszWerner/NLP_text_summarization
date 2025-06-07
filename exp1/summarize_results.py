@@ -4,12 +4,10 @@ import pandas as pd
 from datasets import load_dataset
 
 def main():
-    # 1) Wczytaj wyniki z CSV
     df = pd.read_csv("results/embeddings_experiments.csv")
 
-    # 2) Tabela ze średnimi i odchyleniami metryk dla każdego embeddingu
     stats = df.groupby("embedding")[["rouge-1", "rouge-2", "rouge-l"]].agg(["mean", "std"])
-    # Zamieniamy wielopoziomowe nagłówki na pojedyncze, np. "rouge-1_mean", "rouge-1_std", itd.
+    
     stats.columns = [
         f"{metric}_{stat}" 
         for metric, stat in stats.columns
