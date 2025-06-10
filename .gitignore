@@ -4,3 +4,4 @@ venv/
 
 # Ignore dataset folder
 datasets/
+cnn_dailymail/
