@@ -1,5 +1,6 @@
 # Ignore virtual environment folder
 venv/
+.venv/
 
 # Ignore dataset folder
 datasets/
